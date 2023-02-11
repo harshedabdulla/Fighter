@@ -103,13 +103,10 @@ class Game {
   }
   // ** If the game is over and a player has 0 health declare the winner! **
   declareWinner(isOver,p1, p2) {
-    // Create a message variable that will hold a message based on the condition
-    let message
-    // If isOver is true AND p1 health is <= 0 then update message variable  to 'p1 WINS!'
-    if (isOver==true&&pl.health<=0) {
+    let message;
+    if (isOver==true&&p1.health<=0) {
       message=`${p2.name} WINS!!`
     }
-    // Else if isOver is true AND p2 health is <= 0 then update message variable  to 'p2 WINS!'
     else if (isOver==true&&p2.health<=0) {
       message=`${p1.name} WINS!!`
     }
@@ -119,6 +116,7 @@ class Game {
     // Return message variable 
     return message
   }
+
 
   // ** Reset the players health back to it's original state and isOver to FALSE **
   reset(p1,p2) {
